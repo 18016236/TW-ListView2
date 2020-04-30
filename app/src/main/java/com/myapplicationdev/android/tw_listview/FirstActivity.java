@@ -1,7 +1,10 @@
 package com.myapplicationdev.android.tw_listview;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -25,7 +28,22 @@ public class FirstActivity extends AppCompatActivity {
         al.add("Year 2");
         al.add("Year 3");
 
+        lv = findViewById(R.id.lvYears);
 
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, android.R.id.text1, al);
+        lv.setAdapter(adapter);
+
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // String selectedHoliday = array.get(position);
+                Intent i = new Intent(FirstActivity.this, SecondActivity.class);
+                i.putExtra("index", position);
+                startActivity(i);
+            }
+        });
 
 
 
