@@ -45,6 +45,7 @@ public class FirstActivity extends AppCompatActivity {
             }
         });
 
+        // Facci me and YX we dk why when we try the github thingy when we try to do the updated versions one we cannot like synchornized with each other hence as such we have no choice but to do the stuff like that.
 
 
 
